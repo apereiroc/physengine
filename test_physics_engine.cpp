@@ -19,13 +19,13 @@ int main(){
     const double dt = 0.3;
 
     // Position should be (0,0), since the velocity is 0
-    p->Simulate(dt);
+    p->Integrate(dt);
     const Vector& p0 = p->getPosition(name);
     std::cout << "Position: " << p0.x() << ", " << p0.y() << std::endl;
 
     // Add movement. Position should change
     p->setVelocity(name, 3,-1);
-    p->Simulate(dt);
+    p->Integrate(dt);
 
     const Vector& p1 = p->getPosition(name);
     std::cout << "Position: " << p1.x() << ", " << p1.y() << std::endl;
