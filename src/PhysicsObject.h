@@ -13,19 +13,21 @@ class PhysicsObject {
 private:
     Vector position, velocity;
     Color color;
+    const std::string& name;
 public:
-    PhysicsObject(const Vector& position, const Vector& velocity,
+    PhysicsObject(const std::string& name, const Vector& position, const Vector& velocity,
                   const Color& color = ColorWheel::Get())
-    : position(position), velocity(velocity), color(color){}
+    : name(name), position(position), velocity(velocity), color(color){}
 
-    PhysicsObject(const Vector& position, const Vector& velocity, const Colors& color)
-    : position(position), velocity(velocity), color(ColorWheel::MakeColor(color)) {}
+    PhysicsObject(const std::string& name, const Vector& position, const Vector& velocity, const Colors& color)
+    : name(name), position(position), velocity(velocity), color(ColorWheel::MakeColor(color)) {}
 
     virtual ~PhysicsObject() = default;
 
     [[nodiscard]] inline const Vector &getPosition() const { return position; }
     [[nodiscard]] inline const Vector &getVelocity() const { return velocity; }
     [[nodiscard]] inline const Color &getColor() const { return color; }
+    [[nodiscard]] inline const std::string& getName() const { return name; }
 
     inline void setPosition(const Vector& v){ position = v;}
     inline void setPosition(const double& x, const double& y) { position = Vector(x,y); }
