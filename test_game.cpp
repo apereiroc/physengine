@@ -23,16 +23,22 @@ public:
         const double carWidth = 50, carHeight = 20;
 
         const std::string name0 = "Car1";
-        const double xStart0 = 10, yStart0 = 250;
-        const double vx0 = 5, vy0 = 0;
+        const double x0 = 10;
+        const double y0 = 250;
+        const double vx0 = 5;
+        const double vy0 = 0;
 
         const std::string name1 = "Car2";
-        const double xStart1 = xStart0, yStart1 = yStart0 + 2*carHeight;
-        const double vx1 = 5.2, vy1 = 0.2;
+        const double x1 = x0;
+        const double y1 = y0 + 2 * carHeight;
+        const double vx1 = 5.2;
+        const double vy1 = 0.2;
 
         const std::string name2 = "Car3";
-        const double xStart2 = xStart0, yStart2 = yStart1 + 2*carHeight;
-        const double vx2 = 4.8, vy2 = -0.2;
+        const double x2 = x0;
+        const double y2 = y1 + 2 * carHeight;
+        const double vx2 = 4.8;
+        const double vy2 = -0.2;
 
         addShape(Rectangle, name0, xStart0, yStart0, carWidth, carHeight);
         addShape(Rectangle, name1, xStart1, yStart1, carWidth, carHeight);
