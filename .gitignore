@@ -32,3 +32,8 @@
 *.app
 /cmake-build-debug/
 /cmake-build-release/
+/.idea/.gitignore
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/physengine.iml
+/.idea/vcs.xml
