@@ -5,8 +5,14 @@
 #pragma once
 
 #include <Eigen/Dense>
+#include <memory>
+#include <map>
+#include "PhysicsObject.h"
 
 typedef Eigen::Vector2d Vector;
+
+class PhysicsObject;
+typedef std::map<std::string, std::unique_ptr<PhysicsObject>> ObjMap;
 
 typedef struct Color
 {
