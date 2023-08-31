@@ -15,12 +15,12 @@ enum Shape {
     NUMSHAPES
 };
 
-class GameBase {
+class SimBase {
 protected:
     std::unique_ptr<PhysicsEngine> phys;
     std::unique_ptr<RenderingEngine> rend;
 public:
-    GameBase()
+    SimBase()
     : phys(new PhysicsEngine()),
       rend(new RenderingEngine()) {}
 

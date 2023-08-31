@@ -3,7 +3,7 @@
 //
 
 #include <memory>
-#include "GameBase.h"
+#include "SimBase.h"
 
 //**
 // * This game is just a race among cars.
@@ -12,7 +12,7 @@
 
 #define FINISH_LINE (0.75*SCREEN_WIDTH)
 
-class MyGame: public GameBase {
+class MyGame: public SimBase {
 private:
     const double delta;
 public:
