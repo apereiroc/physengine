@@ -32,8 +32,8 @@ int main(){
     const double h2 = 1.5, w2 = 2.5;
 
 
-    auto r1 = std::make_unique<Rectangle>(pos1, vel1, w1, h1);
-    auto r2 = std::make_unique<Rectangle>(pos2, vel2, w2, h2);
+    auto r1 = std::make_unique<Rectangle>("R1",pos1, vel1, w1, h1);
+    auto r2 = std::make_unique<Rectangle>("R2", pos2, vel2, w2, h2);
 
 
     printRectangleInfo(r1.get());
