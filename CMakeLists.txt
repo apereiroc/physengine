@@ -22,3 +22,7 @@ target_link_libraries (test_rendering_engine Eigen3::Eigen ${SDL2_LIBRARIES})
 add_executable(test_physics_engine test_physics_engine.cpp)
 target_include_directories(test_physics_engine PUBLIC src)
 target_link_libraries (test_physics_engine Eigen3::Eigen ${SDL2_LIBRARIES})
+
+add_executable(test_game test_game.cpp)
+target_include_directories(test_game PUBLIC src)
+target_link_libraries (test_game Eigen3::Eigen ${SDL2_LIBRARIES})
