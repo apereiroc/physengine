@@ -13,14 +13,14 @@ class PhysicsObject {
 private:
     Vector position, velocity;
     Color color;
-    const std::string& name;
+    const std::string name;
 public:
-    PhysicsObject(const std::string& name, const Vector& position, const Vector& velocity,
+    PhysicsObject(std::string name, const Vector& position, const Vector& velocity,
                   const Color& color = ColorWheel::Get())
-    : name(name), position(position), velocity(velocity), color(color){}
+    : name(std::move(name)), position(position), velocity(velocity), color(color){}
 
-    PhysicsObject(const std::string& name, const Vector& position, const Vector& velocity, const Colors& color)
-    : name(name), position(position), velocity(velocity), color(ColorWheel::MakeColor(color)) {}
+    PhysicsObject(std::string name, const Vector& position, const Vector& velocity, const Colors& color)
+    : name(std::move(name)), position(position), velocity(velocity), color(ColorWheel::MakeColor(color)) {}
 
     virtual ~PhysicsObject() = default;
 
@@ -44,5 +44,5 @@ public:
     }
 
     // Make class abstract. Define in each derivation how it should be rendered
-    virtual void Render(SDL_Renderer* render) const = 0;
+    virtual void Render(SDL_Renderer* renderer) const = 0;
 };
