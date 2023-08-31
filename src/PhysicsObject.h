@@ -27,5 +27,14 @@ public:
     [[nodiscard]] inline const Vector &getVelocity() const { return velocity; }
     [[nodiscard]] inline const Color &getColor() const { return color; }
 
+    inline void setPosition(const Vector& v){ position = v;}
+    inline void setPosition(const double& x, const double& y) { position = Vector(x,y); }
+
+    inline void setVelocity(const Vector& v){ velocity = v;}
+    inline void setVelocity(const double& x, const double& y) { velocity = Vector(x,y); }
+
+    inline void setColor(const Color& c) { color = c; }
+    inline void setColor(const Colors& c) { color = ColorWheel::MakeColor(c); }
+
     virtual void Render(SDL_Renderer* render) const = 0;
 };
