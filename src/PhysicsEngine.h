@@ -5,18 +5,19 @@
 #pragma once
 
 #include "PhysicsObject.h"
+#include "Types.h"
 #include <map>
 #include <memory>
+#include <functional>
+
 
 class PhysicsEngine {
 private:
-    std::map<std::string, std::unique_ptr<PhysicsObject>> objects;
+    ObjMap objects;
     unsigned int nObjects = 0;
 
 public:
     PhysicsEngine() = default;
-
-    ~PhysicsEngine(){ std::cout << "Destroying physics engine" << std::endl;}
 
     void addObject(PhysicsObject* obj){
         objects[obj->getName()] = std::unique_ptr<PhysicsObject>(obj);
@@ -38,11 +39,18 @@ public:
     inline void setColor(const std::string& name, const Color& c) { objects[name]->setColor(c); }
     inline void setColor(const std::string& name, const Colors& c) { objects[name]->setColor(c); }
 
-    void Simulate(const double& delta){
-        std::map<std::string, std::unique_ptr<PhysicsObject>>::iterator it;
-        for(it=objects.begin(); it!=objects.end(); ++it){
+    inline void Integrate(const double& delta){
+        ObjMap::iterator it;
+        for (it = objects.begin(); it != objects.end(); it++){
             it->second->Integrate(delta);
         }
     }
 
+    // Pass a lambda function to apply to all objects in the engine
+    inline void applyToObjects(const std::function<void(const std::unique_ptr<PhysicsObject>&)>& fun){
+        ObjMap::iterator it;
+        for (it = objects.begin(); it != objects.end(); it++){
+            fun(it->second);
+        }
+    }
 };
