@@ -17,6 +17,8 @@ public:
               const double& height)
     : PhysicsObject(position, velocity), width(width), height(height) {}
 
+    Rectangle(const double& x, const double& y, const double& w, const double& h)
+    : PhysicsObject(Vector(x, y), Vector(0, 0)), width(w), height(h) {}
 
     [[nodiscard]] inline double getWidth() const { return width; }
 
