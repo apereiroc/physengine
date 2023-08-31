@@ -18,3 +18,7 @@ target_link_libraries (test_rectangle Eigen3::Eigen ${SDL2_LIBRARIES})
 add_executable(test_rendering_engine test_rendering_engine.cpp)
 target_include_directories(test_rendering_engine PUBLIC src)
 target_link_libraries (test_rendering_engine Eigen3::Eigen ${SDL2_LIBRARIES})
+
+add_executable(test_physics_engine test_physics_engine.cpp)
+target_include_directories(test_physics_engine PUBLIC src)
+target_link_libraries (test_physics_engine Eigen3::Eigen ${SDL2_LIBRARIES})
