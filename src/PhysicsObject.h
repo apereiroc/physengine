@@ -36,5 +36,11 @@ public:
     inline void setColor(const Color& c) { color = c; }
     inline void setColor(const Colors& c) { color = ColorWheel::MakeColor(c); }
 
+    // Integration method. Common to all derivations
+    inline void Integrate(const double &delta){
+        position += velocity * delta;
+    }
+
+    // Make class abstract. Define in each derivation how it should be rendered
     virtual void Render(SDL_Renderer* render) const = 0;
 };
