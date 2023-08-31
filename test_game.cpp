@@ -40,9 +40,9 @@ public:
         const double vx2 = 4.8;
         const double vy2 = -0.2;
 
-        addShape(Rectangle, name0, xStart0, yStart0, carWidth, carHeight);
-        addShape(Rectangle, name1, xStart1, yStart1, carWidth, carHeight);
-        addShape(Rectangle, name2, xStart2, yStart2, carWidth, carHeight);
+        addShape(Rectangle, name0, x0, y0, carWidth, carHeight);
+        addShape(Rectangle, name1, x1, y1, carWidth, carHeight);
+        addShape(Rectangle, name2, x2, y2, carWidth, carHeight);
 
         // Add velocities
         phys->setVelocity(name0, vx0, vy0);
