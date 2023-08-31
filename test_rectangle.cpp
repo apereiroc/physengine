@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include "Rectangle.h"
-#include "PhysicsObject.h"
 #include "Types.h"
 
 void printRectangleInfo(Rectangle* r){
