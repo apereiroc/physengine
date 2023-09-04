@@ -40,6 +40,8 @@ public:
 
     // Integration method. Common to all derivations
     inline void Integrate(const double &delta){
+        assert(delta > 0.0);
+        
         position += velocity * delta;
     }
 
